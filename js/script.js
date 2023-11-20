@@ -355,11 +355,13 @@ let flag10 = Object.keys(dictionary10);
 let countries10 = Object.values(dictionary10);
 
 document.addEventListener('keydown', function (event) {
+    console.log('Tecla presionada:', event.key);
     if (event.key === ' ') { // ' ' representa la tecla de espacio
-        if (window.location.href.includes('index.html')) {
-            window.location.href = 'html/flags.html'; 
-        } else if (window.location.href.includes('score.html')) {
-            window.location.href = 'flags.html'; 
+        console.log('Espacio presionado5');
+        if (window.location.pathname.endsWith('guess-the-flag/')) {
+            window.location.href = '/guess-the-flag/html/flag.html';
+        } else if (window.location.pathname.endsWith('score.html')) {
+            window.location.href = 'flag.html'; 
         }
     }
 });
