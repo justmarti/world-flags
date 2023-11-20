@@ -359,9 +359,9 @@ document.addEventListener('keydown', function (event) {
     if (event.key === ' ') { // ' ' representa la tecla de espacio
         console.log('Espacio presionado5');
         if (window.location.pathname.endsWith('guess-the-flag/')) {
-            window.location.href = '/guess-the-flag/html/flag.html';
+            window.location.href = '/guess-the-flag/html/flags.html';
         } else if (window.location.pathname.endsWith('score.html')) {
-            window.location.href = 'flag.html'; 
+            window.location.href = 'flags.html'; 
         }
     }
 });
