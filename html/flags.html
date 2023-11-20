@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Principal page of Guess the Flag">
+    <meta name="author" content="Marti Espinosa">
+    <title>Guess the Flag</title>
+    <link rel="icon" href="../icon/icon.png" type="image/png">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body onload="desSeleccionarRadioButtons()">
+    <div class="context">        
+        <section id="sec">
+            <h1>Guess the Flag</h1>
+            <div id="zzz">
+              <p class="flag"></p> <!-- https://es.piliapp.com/emoji/list/flags/ -->
+              <div class="options">
+                  <input type="radio" id="radio1" class="radio" name="pais" tabindex="1"><label id="opcion1" class="pais" for="radio1"></label><br>
+                  <input type="radio" id="radio2" class="radio" name="pais" tabindex="2"><label id="opcion2" class="pais" for="radio2"></label><br>
+                  <input type="radio" id="radio3" class="radio" name="pais" tabindex="3"><label id="opcion3" class="pais" for="radio3"></label><br>
+                  <button id="solve" class="buttons">Solve</button>
+                  <button id="next" class="buttons" disabled>Next flag</button>
+              </div>
+            </div>
+            <div class="progress">
+                <div id="guess1" class="progress_number">1</div>
+                <div id="guess2" class="progress_number">2</div>
+                <div id="guess3" class="progress_number">3</div>
+                <div id="guess4" class="progress_number">4</div>
+                <div id="guess5" class="progress_number">5</div>
+                <div id="guess6" class="progress_number">6</div>
+                <div id="guess7" class="progress_number">7</div>
+                <div id="guess8" class="progress_number">8</div>
+                <div id="guess9" class="progress_number">9</div>
+                <div id="guess10" class="progress_number">10</div>
+            </div>             
+        </section>
+    </div>
+
+    <div class="area">
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+
+    <script src="../js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Score page of Guess the Flag">
+    <meta name="author" content="Marti Espinosa">
+    <title>Score</title>
+    <link rel="icon" href="../icon/icon.png" type="image/png">
+
+    <link rel="stylesheet" href="../css/style.css">     
+</head>
+
+<body onload="score(contadorAciertos)">
+    <div class="context">
+        <section id="sec">
+            <h1>Your score</h1>
+            <p id="score"></p>
+            <p class="blink" style="padding-top: 10%; font-size: 33px;">Press spacebar to play again</p>
+        </section>
+    </div>
+
+    <div class="area">
+        <ul class="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+
+    // Importa la libreria del confetti
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    // Lo enlaca con mi archivo js
+    <script src="../js/script.js"></script>
+    // Otra etiqueta script para este html en concreto
+    <script>
+        // Recupera el valor de contadorAciertos del localStorage
+        var contadorAciertos = localStorage.getItem('contadorAciertos');
+        // Asegúrate de que contadorAciertos sea un número (puede ser una cadena al recuperarlo del localStorage)
+        contadorAciertos = parseInt(contadorAciertos);
+        // Llama a la función score con contadorAciertos como parámetro
+        score(contadorAciertos);
+    </script>    
+</body>
+</html>
