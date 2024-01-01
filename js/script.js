@@ -87,26 +87,55 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
+
+
+function comprobarAnchoApp() {
+    return document.documentElement.clientWidth;
+}
+
 // Función para ajustar el tamaño del texto
-function ajustarTamanioTexto(elemento) {
+function ajustarTamanioTexto() {
     // Definir un tamaño base y un factor de reducción
-    var tamanoBase = 38; // Puedes ajustar esto según tus necesidades
-    var factorReduccion = 1.1; // Puedes ajustar esto según tus necesidades
+    var tamanoBase;
+    var factorReduccion;
 
-    // Obtener la longitud del texto
-    var longitudTexto = elemento.textContent.length;
-
-    // Calcular el tamaño de la fuente en función de la longitud del texto
-    if (longitudTexto > 15) {
-        letrasDeMas = longitudTexto - 15;
-        var tamanoFuente = tamanoBase - factorReduccion * letrasDeMas;
+    var ancho = comprobarAnchoApp();
+    
+    if (ancho > 600) {
+        tamanoBase = 3; // Puedes ajustar esto según tus necesidades
+        factorReduccion = 0.1; // Puedes ajustar esto según tus necesidades
     } else {
-        tamanoFuente = tamanoBase
+        tamanoBase = 6; // Puedes ajustar esto según tus necesidades
+        factorReduccion = 0.3; // Puedes ajustar esto según tus necesidades
     }
 
-    // Aplicar el tamaño de la fuente al elemento
-    elemento.style.fontSize = tamanoFuente + 'px';
+    // Obtener la longitud del texto
+    var elementosPais = document.getElementsByClassName("pais");
+
+    // Iterar sobre los elementos con la clase "pais"
+    for (var i = 0; i < elementosPais.length; i++) {
+        var longitudTexto = elementosPais[i].textContent.length;
+
+        // Calcular el tamaño de la fuente en función de la longitud del texto
+        if (longitudTexto > 15) {
+            letrasDeMas = longitudTexto - 15;
+            var tamanoFuente = tamanoBase - factorReduccion * letrasDeMas;
+        } else {
+            tamanoFuente = tamanoBase;
+        }
+
+        // Aplicar el tamaño de la fuente al elemento
+        elementosPais[i].style.fontSize = tamanoFuente + 'vw';
+    }
 }
+
+// Llamar a ajustarTamanioTexto al cargar la página
+window.addEventListener('load', ajustarTamanioTexto);
+
+// Llamar a ajustarTamanioTexto cada vez que la ventana se redimensiona
+window.addEventListener('resize', ajustarTamanioTexto);
+
 
 
 
@@ -151,199 +180,200 @@ function score(contadorAciertos) {
 
 // LAS 193 BANDERAS ASOCIADAS AL NOMBRE DE SU PAIS
 let fullFlagDictionary = {
-    '🇦🇫': 'Afghanistan',
-    '🇦🇱': 'Albania',
-    '🇩🇿': 'Algeria',
-    '🇦🇩': 'Andorra',
-    '🇦🇴': 'Angola',
-    '🇦🇬': 'Antigua and Barbuda',
-    '🇦🇷': 'Argentina',
-    '🇦🇲': 'Armenia',
-    '🇦🇺': 'Australia',
-    '🇦🇹': 'Austria',
-    '🇦🇿': 'Azerbaijan',
-    '🇧🇸': 'Bahamas',
-    '🇧🇭': 'Bahrain',
-    '🇧🇩': 'Bangladesh',
-    '🇧🇧': 'Barbados',
-    '🇧🇾': 'Belarus',
-    '🇧🇪': 'Belgium',
-    '🇧🇿': 'Belize',
-    '🇧🇯': 'Benin',
-    '🇧🇹': 'Bhutan',
-    '🇧🇴': 'Bolivia',
-    '🇧🇦': 'Bosnia and Herzegovina',
-    '🇧🇼': 'Botswana',
-    '🇧🇷': 'Brazil',
-    '🇧🇳': 'Brunei',
-    '🇧🇬': 'Bulgaria',
-    '🇧🇫': 'Burkina Faso',
-    '🇧🇮': 'Burundi',
-    '🇨🇮': "Côte d'Ivoire",
-    '🇨🇻': 'Cabo Verde',
-    '🇰🇭': 'Cambodia',
-    '🇨🇲': 'Cameroon',
-    '🇨🇦': 'Canada',
-    '🇨🇫': 'Central African Republic',
-    '🇹🇩': 'Chad', // NEW ONE
-    '🇨🇱': 'Chile',
-    '🇨🇳': 'China',
-    '🇨🇴': 'Colombia',
-    '🇰🇲': 'Comoros',
-    '🇨🇬': 'Congo',
-    '🇨🇷': 'Costa Rica',
-    '🇭🇷': 'Croatia',
-    '🇨🇺': 'Cuba',
-    '🇨🇾': 'Cyprus',
-    '🇨🇿': 'Czechia',
-    '🇨🇩': 'Democratic Republic of the Congo',
-    '🇩🇰': 'Denmark',
-    '🇩🇯': 'Djibouti',
-    '🇩🇲': 'Dominica',
-    '🇩🇴': 'Dominican Republic',
-    '🇪🇨': 'Ecuador',
-    '🇪🇬': 'Egypt',
-    '🇸🇻': 'El Salvador', // NEW ONE
-    '🇬🇶': 'Equatorial Guinea',
-    '🇪🇷': 'Eritrea',
-    '🇪🇪': 'Estonia',
-    '🇸🇿': 'Eswatini', // NEW ONE
-    '🇪🇹': 'Ethiopia',
-    '🇫🇯': 'Fiji',
-    '🇫🇮': 'Finland',
-    '🇫🇷': 'France',
-    '🇬🇦': 'Gabon',
-    '🇬🇲': 'Gambia',
-    '🇬🇪': 'Georgia',
-    '🇩🇪': 'Germany',
-    '🇬🇭': 'Ghana',
-    '🇬🇷': 'Greece',
-    '🇬🇩': 'Grenada',
-    '🇬🇹': 'Guatemala',
-    '🇬🇳': 'Guinea',
-    '🇬🇼': 'Guinea-Bissau',
-    '🇬🇾': 'Guyana',
-    '🇭🇹': 'Haiti',
-    '🇭🇳': 'Honduras',
-    '🇭🇺': 'Hungary',
-    '🇮🇸': 'Iceland',
-    '🇮🇳': 'India',
-    '🇮🇩': 'Indonesia',
-    '🇮🇷': 'Iran',
-    '🇮🇶': 'Iraq',
-    '🇮🇪': 'Ireland',
-    '🇮🇱': 'Israel',
-    '🇮🇹': 'Italy',
-    '🇯🇲': 'Jamaica',
-    '🇯🇵': 'Japan',
-    '🇯🇴': 'Jordan',
-    '🇰🇿': 'Kazakhstan',
-    '🇰🇪': 'Kenya',
-    '🇰🇮': 'Kiribati',
-    '🇰🇼': 'Kuwait',
-    '🇰🇬': 'Kyrgyzstan',
-    '🇱🇦': 'Laos',
-    '🇱🇻': 'Latvia',
-    '🇱🇧': 'Lebanon',
-    '🇱🇸': 'Lesotho',
-    '🇱🇷': 'Liberia',
-    '🇱🇾': 'Libya',
-    '🇱🇮': 'Liechtenstein',
-    '🇱🇹': 'Lithuania',
-    '🇱🇺': 'Luxembourg',
-    '🇲🇬': 'Madagascar',
-    '🇲🇼': 'Malawi',
-    '🇲🇾': 'Malaysia',
-    '🇲🇻': 'Maldives',
-    '🇲🇱': 'Mali',
-    '🇲🇹': 'Malta',
-    '🇲🇭': 'Marshall Islands',
-    '🇲🇷': 'Mauritania',
-    '🇲🇺': 'Mauritius',
-    '🇲🇽': 'Mexico',
-    '🇫🇲': 'Micronesia', // NEW ONE
-    '🇲🇩': 'Moldova',
-    '🇲🇨': 'Monaco',
-    '🇲🇳': 'Mongolia',
-    '🇲🇪': 'Montenegro',
-    '🇲🇦': 'Morocco',
-    '🇲🇿': 'Mozambique',
-    '🇲🇲': 'Myanmar',
-    '🇳🇦': 'Namibia',
-    '🇳🇷': 'Nauru', // NEW ONE
-    '🇳🇵': 'Nepal',
-    '🇳🇱': 'Netherlands',
-    '🇳🇿': 'New Zealand',
-    '🇳🇮': 'Nicaragua',
-    '🇳🇪': 'Niger',
-    '🇳🇬': 'Nigeria',
-    '🇰🇵': 'North Korea',
-    '🇲🇰': 'North Macedonia',
-    '🇳🇴': 'Norway',
-    '🇴🇲': 'Oman',
-    '🇵🇰': 'Pakistan',
-    '🇵🇼': 'Palau',
-    '🇵🇦': 'Panama',
-    '🇵🇬': 'Papua New Guinea',
-    '🇵🇾': 'Paraguay',
-    '🇵🇪': 'Peru',
-    '🇵🇭': 'Philippines',
-    '🇵🇱': 'Poland',
-    '🇵🇹': 'Portugal',
-    '🇶🇦': 'Qatar',
-    '🇷🇴': 'Romania',
-    '🇷🇺': 'Russia',
-    '🇷🇼': 'Rwanda',
-    '🇰🇳': 'Saint Kitts and Nevis',
-    '🇱🇨': 'Saint Lucia',
-    '🇻🇨': 'Saint Vincent and the Grenadines', // NEW ONE
-    '🇼🇸': 'Samoa', // NEW ONE
-    '🇸🇲': 'San Marino', // NEW ONE
-    '🇸🇹': 'Sao Tome and Principe', // NEW ONE
-    '🇸🇦': 'Saudi Arabia',
-    '🇸🇳': 'Senegal', // NEW ONE
-    '🇷🇸': 'Serbia',
-    '🇸🇨': 'Seychelles',
-    '🇸🇱': 'Sierra Leone', // NEW ONE
-    '🇸🇬': 'Singapore', // NEW ONE
-    '🇸🇰': 'Slovakia', // NEW ONE
-    '🇸🇮': 'Slovenia', // NEW ONE
-    '🇸🇧': 'Solomon Islands',
-    '🇸🇴': 'Somalia', // NEW ONE
-    '🇿🇦': 'South Africa', // NEW ONE
-    '🇰🇷': 'South Korea',
-    '🇸🇸': 'South Sudan', // NEW ONE
-    '🇪🇸': 'Spain',
-    '🇱🇰': 'Sri Lanka',
-    '🇸🇩': 'Sudan',
-    '🇸🇷': 'Suriname', // NEW ONE
-    '🇸🇪': 'Sweden', // NEW ONE
-    '🇨🇭': 'Switzerland',
-    '🇸🇾': 'Syria', // NEW ONE
-    '🇹🇯': 'Tajikistan', // NEW ONE
-    '🇹🇿': 'Tanzania', // NEW ONE
-    '🇹🇭': 'Thailand', // NEW ONE
-    '🇹🇱': 'Timor-Leste', // NEW ONE
-    '🇹🇬': 'Togo', // NEW ONE
-    '🇹🇴': 'Tonga', // NEW ONE
-    '🇹🇹': 'Trinidad and Tobago', // NEW ONE
-    '🇹🇳': 'Tunisia', // NEW ONE
-    '🇹🇷': 'Turkey', // NEW ONE
-    '🇹🇲': 'Turkmenistan', // NEW ONE
-    '🇹🇻': 'Tuvalu', // NEW ONE
-    '🇺🇬': 'Uganda', // NEW ONE
-    '🇺🇦': 'Ukraine', // NEW ONE
-    '🇦🇪': 'United Arab Emirates',
-    '🇬🇧': 'United Kingdom',
-    '🇺🇸': 'United States of America',
-    '🇺🇾': 'Uruguay', // NEW ONE
-    '🇺🇿': 'Uzbekistan', // NEW ONE
-    '🇻🇺': 'Vanuatu', // NEW ONE
-    '🇻🇪': 'Venezuela', // NEW ONE
-    '🇻🇳': 'Vietnam', // NEW ONE
-    '🇾🇪': 'Yemen', // NEW ONE
-    '🇿🇲': 'Zambia', // NEW ONE
-    '🇿🇼': 'Zimbabwe', // NEW ONE  
+    '../img/afghanistan.svg': 'Afghanistan',
+    '../img/albania.svg': 'Albania',
+    '../img/algeria.svg': 'Algeria',
+    '../img/andorra.svg': 'Andorra',
+    '../img/angola.svg': 'Angola',
+    '../img/antigua-and-barbuda.svg': 'Antigua and Barbuda',
+    '../img/argentina.svg': 'Argentina',
+    '../img/armenia.svg': 'Armenia',
+    '../img/australia.svg': 'Australia',
+    '../img/austria.svg': 'Austria',
+    '../img/azerbaijan.svg': 'Azerbaijan',
+    '../img/bahamas.svg': 'Bahamas',
+    '../img/bahrain.svg': 'Bahrain',
+    '../img/bangladesh.svg': 'Bangladesh',
+    '../img/barbados.svg': 'Barbados',
+    '../img/belarus.svg': 'Belarus',
+    '../img/belgium.svg': 'Belgium',
+    '../img/belize.svg': 'Belize',
+    '../img/benin.svg': 'Benin',
+    '../img/bhutan.svg': 'Bhutan',
+    '../img/bolivia.svg': 'Bolivia',
+    '../img/bosnia-and-herzegovina.svg': 'Bosnia and Herzegovina',
+    '../img/botswana.svg': 'Botswana',
+    '../img/brazil.svg': 'Brazil',
+    '../img/brunei.svg': 'Brunei',
+    '../img/bulgaria.svg': 'Bulgaria',
+    '../img/burkina-faso.svg': 'Burkina Faso',
+    '../img/burundi.svg': 'Burundi',    
+    '../img/cabo-verde.svg': 'Cabo Verde',
+    '../img/cambodia.svg': 'Cambodia',
+    '../img/cameroon.svg': 'Cameroon',
+    '../img/canada.svg': 'Canada',
+    '../img/central-african-republic.svg': 'Central African Republic',
+    '../img/chad.svg': 'Chad',
+    '../img/chile.svg': 'Chile',
+    '../img/china.svg': 'China',
+    '../img/colombia.svg': 'Colombia',
+    '../img/comoros.svg': 'Comoros',
+    '../img/congo.svg': 'Congo',
+    '../img/costa-rica.svg': 'Costa Rica',
+    '../img/croatia.svg': 'Croatia',
+    '../img/cuba.svg': 'Cuba',
+    '../img/cyprus.svg': 'Cyprus',
+    '../img/czech-republic.svg': 'Czech Republic',
+    '../img/denmark.svg': 'Denmark',
+    '../img/djibouti.svg': 'Djibouti',
+    '../img/dominica.svg': 'Dominica',
+    '../img/dominican-republic.svg': 'Dominican Republic',
+    '../img/dr-congo.svg': 'DR Congo',
+    '../img/ecuador.svg': 'Ecuador',
+    '../img/egypt.svg': 'Egypt',
+    '../img/el-salvador.svg': 'El Salvador',
+    '../img/equatorial-guinea.svg': 'Equatorial Guinea',
+    '../img/eritrea.svg': 'Eritrea',
+    '../img/estonia.svg': 'Estonia',
+    '../img/eswatini.svg': 'Eswatini',
+    '../img/ethiopia.svg': 'Ethiopia',
+    '../img/fiji.svg': 'Fiji',
+    '../img/finland.svg': 'Finland',
+    '../img/france.svg': 'France',
+    '../img/gabon.svg': 'Gabon',
+    '../img/gambia.svg': 'Gambia',
+    '../img/georgia.svg': 'Georgia',
+    '../img/germany.svg': 'Germany',
+    '../img/ghana.svg': 'Ghana',
+    '../img/greece.svg': 'Greece',
+    '../img/grenada.svg': 'Grenada',
+    '../img/guatemala.svg': 'Guatemala',
+    '../img/guinea.svg': 'Guinea',
+    '../img/guinea-bissau.svg': 'Guinea-Bissau',
+    '../img/guyana.svg': 'Guyana',
+    '../img/haiti.svg': 'Haiti',
+    '../img/honduras.svg': 'Honduras',
+    '../img/hungary.svg': 'Hungary',
+    '../img/iceland.svg': 'Iceland',
+    '../img/india.svg': 'India',
+    '../img/indonesia.svg': 'Indonesia',
+    '../img/iran.svg': 'Iran',
+    '../img/iraq.svg': 'Iraq',
+    '../img/ireland.svg': 'Ireland',
+    '../img/israel.svg': 'Israel',
+    '../img/italy.svg': 'Italy',
+    '../img/ivory-coast.svg': 'Ivory Coast',
+    '../img/jamaica.svg': 'Jamaica',
+    '../img/japan.svg': 'Japan',
+    '../img/jordan.svg': 'Jordan',
+    '../img/kazakhstan.svg': 'Kazakhstan',
+    '../img/kenya.svg': 'Kenya',
+    '../img/kiribati.svg': 'Kiribati',
+    '../img/kuwait.svg': 'Kuwait',
+    '../img/kyrgyzstan.svg': 'Kyrgyzstan',
+    '../img/laos.svg': 'Laos',
+    '../img/latvia.svg': 'Latvia',
+    '../img/lebanon.svg': 'Lebanon',
+    '../img/lesotho.svg': 'Lesotho',
+    '../img/liberia.svg': 'Liberia',
+    '../img/libya.svg': 'Libya',
+    '../img/liechtenstein.svg': 'Liechtenstein',
+    '../img/lithuania.svg': 'Lithuania',
+    '../img/luxembourg.svg': 'Luxembourg',
+    '../img/madagascar.svg': 'Madagascar',
+    '../img/malawi.svg': 'Malawi',
+    '../img/malaysia.svg': 'Malaysia',
+    '../img/maldives.svg': 'Maldives',
+    '../img/mali.svg': 'Mali',
+    '../img/malta.svg': 'Malta',
+    '../img/marshall-islands.svg': 'Marshall Islands',
+    '../img/mauritania.svg': 'Mauritania',
+    '../img/mauritius.svg': 'Mauritius',
+    '../img/mexico.svg': 'Mexico',
+    '../img/micronesia.svg': 'Micronesia',
+    '../img/moldova.svg': 'Moldova',
+    '../img/monaco.svg': 'Monaco',
+    '../img/mongolia.svg': 'Mongolia',
+    '../img/montenegro.svg': 'Montenegro',
+    '../img/morocco.svg': 'Morocco',
+    '../img/mozambique.svg': 'Mozambique',
+    '../img/myanmar.svg': 'Myanmar',
+    '../img/namibia.svg': 'Namibia',
+    '../img/nauru.svg': 'Nauru',
+    '../img/nepal.svg': 'Nepal',
+    '../img/netherlands.svg': 'Netherlands',
+    '../img/new-zealand.svg': 'New Zealand',
+    '../img/nicaragua.svg': 'Nicaragua',
+    '../img/niger.svg': 'Niger',
+    '../img/nigeria.svg': 'Nigeria',
+    '../img/north-korea.svg': 'North Korea',
+    '../img/north-macedonia.svg': 'North Macedonia',
+    '../img/norway.svg': 'Norway',
+    '../img/oman.svg': 'Oman',
+    '../img/pakistan.svg': 'Pakistan',
+    '../img/palau.svg': 'Palau',
+    '../img/panama.svg': 'Panama',
+    '../img/papua-new-guinea.svg': 'Papua New Guinea',
+    '../img/paraguay.svg': 'Paraguay',
+    '../img/peru.svg': 'Peru',
+    '../img/philippines.svg': 'Philippines',
+    '../img/poland.svg': 'Poland',
+    '../img/portugal.svg': 'Portugal',
+    '../img/qatar.svg': 'Qatar',
+    '../img/romania.svg': 'Romania',
+    '../img/russia.svg': 'Russia',
+    '../img/rwanda.svg': 'Rwanda',
+    '../img/saint-kitts-and-nevis.svg': 'Saint Kitts and Nevis',
+    '../img/saint-lucia.svg': 'Saint Lucia',    
+    '../img/samoa.svg': 'Samoa',
+    '../img/san-marino.svg': 'San Marino',
+    '../img/sao-tome-and-principe.svg': 'Sao Tome and Principe',
+    '../img/saudi-arabia.svg': 'Saudi Arabia',
+    '../img/senegal.svg': 'Senegal',
+    '../img/serbia.svg': 'Serbia',
+    '../img/seychelles.svg': 'Seychelles',
+    '../img/sierra-leone.svg': 'Sierra Leone',
+    '../img/singapore.svg': 'Singapore',
+    '../img/slovakia.svg': 'Slovakia',
+    '../img/slovenia.svg': 'Slovenia',
+    '../img/solomon-islands.svg': 'Solomon Islands',
+    '../img/somalia.svg': 'Somalia',
+    '../img/south-africa.svg': 'South Africa',
+    '../img/south-korea.svg': 'South Korea',
+    '../img/south-sudan.svg': 'South Sudan',
+    '../img/spain.svg': 'Spain',
+    '../img/sri-lanka.svg': 'Sri Lanka',
+    '../img/saint-vincent-and-grenadines.svg': 'St. Vincent & Grenadines',
+    '../img/sudan.svg': 'Sudan',
+    '../img/suriname.svg': 'Suriname',
+    '../img/sweden.svg': 'Sweden',
+    '../img/switzerland.svg': 'Switzerland',
+    '../img/syria.svg': 'Syria',
+    '../img/tajikistan.svg': 'Tajikistan',
+    '../img/tanzania.svg': 'Tanzania',
+    '../img/thailand.svg': 'Thailand',
+    '../img/timor-leste.svg': 'Timor-Leste',
+    '../img/togo.svg': 'Togo',
+    '../img/tonga.svg': 'Tonga',
+    '../img/trinidad-and-tobago.svg': 'Trinidad and Tobago',
+    '../img/tunisia.svg': 'Tunisia',
+    '../img/turkey.svg': 'Turkey',
+    '../img/turkmenistan.svg': 'Turkmenistan',
+    '../img/tuvalu.svg': 'Tuvalu',
+    '../img/uganda.svg': 'Uganda',
+    '../img/ukraine.svg': 'Ukraine',
+    '../img/united-arab-emirates.svg': 'United Arab Emirates',
+    '../img/united-kingdom.svg': 'United Kingdom',
+    '../img/united-states.svg': 'United States',
+    '../img/uruguay.svg': 'Uruguay',
+    '../img/uzbekistan.svg': 'Uzbekistan',
+    '../img/vanuatu.svg': 'Vanuatu',
+    '../img/vatican-city.svg' : 'Vatican City',
+    '../img/venezuela.svg': 'Venezuela',
+    '../img/vietnam.svg': 'Vietnam',
+    '../img/yemen.svg': 'Yemen',
+    '../img/zambia.svg': 'Zambia',
+    '../img/zimbabwe.svg': 'Zimbabwe',  
 };
 
 
@@ -355,12 +385,10 @@ let flag10 = Object.keys(dictionary10);
 let countries10 = Object.values(dictionary10);
 
 document.addEventListener('keydown', function (event) {
-    console.log('Tecla presionada:', event.key);
     if (event.key === ' ') { // ' ' representa la tecla de espacio
-        console.log('Espacio presionado5');
-        if (window.location.pathname.endsWith('guess-the-flag/')) {
-            window.location.href = '/guess-the-flag/html/flags.html';
-        } else if (window.location.pathname.endsWith('score.html')) {
+        if (window.location.href.includes('index.html')) {
+            window.location.href = 'html/flags.html'; 
+        } else if (window.location.href.includes('score.html')) {
             window.location.href = 'flags.html'; 
         }
     }
@@ -372,7 +400,7 @@ if (window.location.href.includes('flags.html')) {
     var opcionCorrecta = document.getElementById('opcion' + opcionCorrectaNum);
     var flag = document.getElementsByClassName('flag')[0];
     document.addEventListener('DOMContentLoaded', function() {
-        flag.innerHTML = flag10[0];
+        flag.src = flag10[0];
         opcionCorrecta.innerHTML = countries10[0];
         console.log(countries10);
     });
@@ -508,7 +536,7 @@ if (window.location.href.includes('flags.html')) {
             const flagElement = document.querySelector('.flag');
             if (flagElement) {
                 currentIndex = (currentIndex + 1) % flag10.length;
-                flagElement.innerHTML = flag10[currentIndex];
+                flagElement.src = flag10[currentIndex];
             }
 
             const radioButtons = document.querySelectorAll("input[type='radio']");
