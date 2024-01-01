@@ -402,7 +402,6 @@ if (window.location.href.includes('flags.html')) {
     document.addEventListener('DOMContentLoaded', function() {
         flag.src = flag10[0];
         opcionCorrecta.innerHTML = countries10[0];
-        console.log(countries10);
     });
     // PONE LOS PAISES INCORRECTOS EN LOS 2 LABELS RESTANTES
     do {
