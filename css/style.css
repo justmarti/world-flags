@@ -71,7 +71,7 @@ h1 {
   top: 25px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: clamp(4vw, 33px, 45px);
+  font-size: 4vw;
   color: #4ec85a;
   color: rgba(255, 255, 255, 0.8);
   text-align: center;
@@ -86,15 +86,18 @@ h1 {
   flex-wrap: wrap;
 }
 
-
 .flag {
   position: absolute;
-  font-size: 33vw;
   left: 5vw;
   top: 50%;
   transform: translateX(-50%);
   transform: translateY(-50%);
   opacity: .85;
+}
+
+img {
+  max-width: 42%;
+  height: auto;
 }
 
 .options {
@@ -136,7 +139,7 @@ label {
   font-size: clamp(3vw, 12px, 38px);
   font-weight: 500;
   cursor: pointer;
-  vertical-align: middle;
+  /* vertical-align: middle; */
   transition: 0.2s all linear;
 }
 
@@ -193,6 +196,18 @@ label {
   font-size: 88px;
   font-weight: bold;
   color: #4ec87d;
+  position: absolute;
+  width: 100%;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#press {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 
@@ -216,24 +231,42 @@ section {
 
 
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
+  h1 {
+    font-size: 8vw;
+  }
+  
   .options {
     width: 70%;
     left: 15%;
     top: 70%;
   }
 
-  .pais {
-    font-size: 6vw !important;
-  }
+  /* .pais {
+    font-size: 1.5em;
+  } */
 
   .flag {
-    width: 100%;
-    font-size: 55vw;
-    left: 0;
-    top: 38%;
-    text-align: center;
+    left: 10%;
+    top: 35%;
   }
+
+  img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  .buttons {
+    margin-top: 6%;
+  }
+
+  #opcion1, #opcion2 {
+    padding-bottom: 8%;
+  }
+  #radio1, #radio2 {
+    margin-bottom: 8%;
+  }
+
 }
 
 
