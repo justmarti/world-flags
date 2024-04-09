@@ -386,8 +386,8 @@ let countries10 = Object.values(dictionary10);
 
 document.addEventListener('keydown', function (event) {
     if (event.key === ' ') { // ' ' representa la tecla de espacio
-        if (window.location.pathname.endsWith('guess-the-flag/')) {
-            window.location.href = '/guess-the-flag/html/flags.html';
+        if (window.location.pathname.endsWith('Guess10Flags/')) {
+            window.location.href = '/Guess10Flags/html/flags.html';
         } else if (window.location.pathname.endsWith('score.html')) {
             window.location.href = 'flags.html'; 
         }
