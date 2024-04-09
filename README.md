@@ -7,6 +7,6 @@ Test your flag knowledge! Guess the country for each flag and try to score 10/10
 
 
 ### Controls
-- tab / shift + tab -> move between the three options
-- return: solve / next flag
-- spacebar: start to play / play again
+- **Tab / Shift + Tab:** Move between the three options
+- **Return:** Solve / Next flag
+- **Spacebar:** Start to play / Play again
