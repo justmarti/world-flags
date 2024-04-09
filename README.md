@@ -1,4 +1,4 @@
-# Guess the Flag
+# Guess 10 Flags
 Test your flag knowledge! Guess the country for each flag and try to score 10/10. Ready to play?  
 [**PLAY GAME**](https://martiespinosa.github.io/guess-the-flag/)
 
