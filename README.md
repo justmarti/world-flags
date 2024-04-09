@@ -10,3 +10,6 @@ Test your flag knowledge! Guess the country for each flag and try to score 10/10
 - **Tab / Shift + Tab:** Move between the three options
 - **Return:** Solve / Next flag
 - **Spacebar:** Start to play / Play again
+
+
+🇺🇸 🇬🇧 🇫🇷 🇩🇪 🇪🇸 🇮🇹 🇨🇦 🇦🇺 🇯🇵 🇧🇷 🇷🇺 🇨🇳 🇮🇳 🇲🇽 🇳🇱 🇰🇷 🇸🇦 🇿🇦 🇸🇪 🇳🇴 🇩🇰 🇫🇮 🇮🇪 🇵🇱 🇦🇷
