@@ -1,6 +1,6 @@
 # Guess 10 Flags
 Test your flag knowledge! Guess the country for each flag and try to score 10/10. Ready to play?  
-[**PLAY GAME**](https://martiespinosa.github.io/guess-the-flag/html/flags.html)
+[**PLAY GAME**](https://martiespinosa.github.io/Guess10Flags/)
 
 
 ![In-game screenshot](https://github.com/martiespinosa/Guess10Flags/blob/main/screenshot/ss5.png)
