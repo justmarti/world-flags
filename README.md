@@ -3,4 +3,4 @@ Test your flag knowledge! Guess the country for each flag and try to score 10/10
 [**PLAY**](https://martiespinosa.github.io/guess-the-flag/)
 
 
-![In-game screenshot]()
+![In-game screenshot](https://github.com/martiespinosa/Guess10Flags/blob/main/screenshot/ss5.png)
