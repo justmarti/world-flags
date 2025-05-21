@@ -385,12 +385,15 @@ let flag10 = Object.keys(dictionary10);
 let countries10 = Object.values(dictionary10);
 
 document.addEventListener('keydown', function (event) {
-    if (event.key === ' ') { // ' ' representa la tecla de espacio
-        if (window.location.pathname.endsWith('Guess10Flags/')) {
-            window.location.href = '/Guess10Flags/html/flags.html';
-        } else if (window.location.pathname.endsWith('score.html')) {
-            window.location.href = 'flags.html'; 
-        }
+    if (event.key !== ' ') return;
+
+    const path = window.location.pathname;
+    const page = path.split('/').pop();
+
+    if (page === '' || page === 'index.html') {
+        window.location.href = 'html/flags.html';
+    } else if (page === 'score.html') {
+        window.location.href = 'flags.html';
     }
 });
 
