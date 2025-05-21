@@ -9,8 +9,7 @@
 
 The game features a **minimalist design** with **intuitive gameplay**, allowing you to navigate and answer quickly using keyboard controls. There’s also **score tracking** to keep track of your progress and encourage you to improve your performance.
 
-[Play now](https://martiespinosa.github.io/Guess10Flags/) and test how well you know the flags of the world!
-![In-game screenshot](https://github.com/martiespinosa/Guess10Flags/blob/main/screenshot/ss5.png)
+![In-game screenshot](screenshot/ss5.png)
 
 *Displayed flags are SVG images derived from the emoji flags of X (formerly known as Twitter), which I chose for their simplicity and visual appeal.*
 
