@@ -84,11 +84,6 @@ p.blink, #score {
   margin-top: 2vw;
 }
 
-fieldset {
-  border: none;
-  margin: 0;
-  padding: 0;
-}
 
 body {
   font-family: "mon";
