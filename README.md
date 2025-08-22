@@ -5,7 +5,7 @@
 > This project is not optimized for mobile devices. The display and user experience may not be suitable on small screens.
 
 ## About the Game
-**Guess 10 Flags** is a simple and fun web game built using **vanilla HTML**, **CSS**, and **JavaScript**. In this game, you'll be shown 10 flags from around the world, and your task is to correctly identify them. Challenge yourself and aim for a perfect score of 10 out of 10!
+**World Flags** is a simple and fun web game built using **vanilla HTML**, **CSS**, and **JavaScript**. In this game, you'll be shown 10 flags from around the world, and your task is to correctly identify them. Challenge yourself and aim for a perfect score of 10 out of 10!
 
 The game features a **minimalist design** with **intuitive gameplay**, allowing you to navigate and answer quickly using keyboard controls. There’s also **score tracking** to keep track of your progress and encourage you to improve your performance.
 
