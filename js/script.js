@@ -430,7 +430,7 @@ if (window.location.href.includes('flags.html')) {
 
 let flag_no = 0;
 
-let contadorAciertos = 0;
+var contadorAciertos = 0;
 
 let currentIndex = 0;
 
