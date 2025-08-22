@@ -1,9 +1,12 @@
 # World Flags 🌍
+*A minimalist flag game built with HTML, CSS, and JavaScript.*
 
 ## About the Game
-**World Flags** is a simple and fun web game built using **vanilla HTML**, **CSS**, and **JavaScript**. In this game, you'll be shown 10 flags from around the world, and your task is to correctly identify them. Challenge yourself and aim for a perfect score of 10 out of 10!
+**World Flags** is a simple web game that challenges you to identify 10 random flags from around the world. Aim for a perfect 10/10 and put your knowledge to the test!  
 
-The game features a **minimalist design** with **intuitive gameplay**, allowing you to navigate and answer quickly using keyboard controls. There’s also **score tracking** to keep track of your progress and encourage you to improve your performance.
+With its **minimalist design**, **keyboard-friendly controls**, and built-in **score tracker**, the game is fast, intuitive, and keeps you motivated to improve. Think of it as a fun **flag quiz** you can play anytime.  
+
+Play it online via **GitHub Pages** (see the repo description).
 
 ![In-game screenshot](screenshots/5.png)
 
@@ -17,12 +20,13 @@ The game features a **minimalist design** with **intuitive gameplay**, allowing 
 | <kbd>Spacebar</kbd>    | Start / Restart game       |
 
 ## Technologies Used
-- **HTML**: Basic structure of the game.
-- **CSS**: Styling and responsive design (although not optimized for mobile).
-- **JavaScript**: Game logic and interactivity.
+- **HTML**: Structure  
+- **CSS**: Styling  
+- **JavaScript**: Logic & Interactivity  
 
 ## Contributing
-Feel free to fork the project, create issues, or submit pull requests. Contributions are always appreciated!
+Feel free to fork the project, create issues, or submit pull requests. Contributions are always appreciated!  
+If you like this project, consider giving it a ⭐ to support it.
 
 ## License
 This project is open-source and available under the [MIT License](LICENSE).
