@@ -59,6 +59,12 @@ html {
   min-height: 100vh;
 }
 
+@media (max-width: 768px) {
+  html, body {
+    background: rgba(40, 40, 40, 0.9);
+  }
+}
+
 *:focus {
   outline: none;
 }
