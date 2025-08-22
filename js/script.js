@@ -399,9 +399,9 @@ document.addEventListener('keydown', function (event) {
 
 if (window.location.href.includes('flags.html')) {
     // PONE BANDERA Y PAIS EN UNA POSICION RANDOM DE 1 A 3 CUANDO SE CARGA LA PAGINA FLAGS.HTML
-    let opcionCorrectaNum = Math.floor(Math.random() * 3) + 1;
-    const opcionCorrecta = document.getElementById('opcion' + opcionCorrectaNum);
-    const flag = document.getElementsByClassName('flag')[0];
+    var opcionCorrectaNum = Math.floor(Math.random() * 3) + 1;
+    var opcionCorrecta = document.getElementById('opcion' + opcionCorrectaNum);
+    var flag = document.getElementsByClassName('flag')[0];
     document.addEventListener('DOMContentLoaded', function() {
         flag.src = flag10[0];
         opcionCorrecta.innerHTML = countries10[0];
@@ -440,9 +440,8 @@ const nextButton = document.getElementById('next');
 
 if (window.location.href.includes('flags.html')) {
     // PONE EN GRIS EL PROGRES NUMBER DE LA BANDERA ACTUAL
-    const currentProgress = document.getElementsByClassName('progress_number')[flag_no];
-    currentProgress.style.border = '.3vw solid rgba(128, 128, 128, 0.7)';
-    currentProgress.style.color = 'rgba(128, 128, 128, 0.7)';
+    document.getElementsByClassName('progress_number')[flag_no].style.border = '.3vw solid rgba(128, 128, 128, 0.7)';
+    document.getElementsByClassName('progress_number')[flag_no].style.color = 'rgba(128, 128, 128, 0.7)';
 
 
     solveButton.addEventListener('click', function() {
@@ -499,9 +498,8 @@ if (window.location.href.includes('flags.html')) {
             window.location.href = 'score.html';
         } else {
             // PONE EN GRIS EL PROGRES NUMBER DE LA SIGUIENTE BANDERA
-            const nextProgress = document.getElementsByClassName('progress_number')[flag_no + 1];
-            nextProgress.style.border = '.3vw solid rgba(128, 128, 128, 0.7)';
-            nextProgress.style.color = 'rgba(128, 128, 128, 0.7)';
+            document.getElementsByClassName('progress_number')[flag_no + 1].style.border = '.3vw solid rgba(128, 128, 128, 0.7)';
+            document.getElementsByClassName('progress_number')[flag_no + 1].style.color = 'rgba(128, 128, 128, 0.7)';
 
             flag_no++;
 
