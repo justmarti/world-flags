@@ -76,12 +76,15 @@ p.blink, #score {
 }
 
 .option-group {
-  display: block;
-  margin-bottom: 2vw;
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  margin-bottom: 3vh;
 }
 
 .button-group {
-  margin-top: 2vw;
+  width: 100%;
+  margin-top: 2vh;
 }
 
 
@@ -131,22 +134,20 @@ img {
   width: 44.5%;
   position: absolute;
   left: 50%;
-  top: 45%;
+  top: 50%;
   transform: translateX(-50%);
   transform: translateY(-50%);
   opacity: .8;
 }
 
 input[type="radio"] {
-  margin-bottom: 2vw;
+  margin-bottom: 0;
   width: 4vw;
   height: 4vw;
   cursor: pointer;
   margin-top: 0;
   vertical-align: middle;
-  /* accent-color: #4ec85a; */
   appearance: none;
-
   border-radius: 50%;
   border: 0.4vw solid white;
   transition: 0.2s all linear;
@@ -156,23 +157,17 @@ input[type="radio"]:checked {
   /* margin-left: 15px; */
   background-color: rgba(255, 166, 0, .9);
 }
-input[type="radio"]:checked + label {
-  text-shadow: 1px 1px 10px #ffffff;
-}
 
 label {
-  padding-bottom: 2vw;
+  padding-bottom: 0;
   margin-left: 1vw;
   font-size: clamp(3vw, 12px, 38px);
   font-weight: 500;
   cursor: pointer;
-  /* vertical-align: middle; */
   transition: 0.2s all linear;
 }
 
 .buttons {
-  position: absolute;
-  right: 0;
   width: 100%;
   color: #ffffff;
   font-size: clamp(2vw, 12px, 33px);
@@ -183,7 +178,6 @@ label {
   padding: 2% 1%;
   cursor: pointer;
   transition: 0.2s all linear;
-  /* letter-spacing: 2px; */
 }
 
 .buttons:hover {
@@ -211,10 +205,12 @@ label {
 .progress_number {
   width: 2.5vw;
   height: 2.5vw;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: .3vw solid white;
   border-radius: 100%;
-  font-size: 2vw;
+  font-size: 1.8vw;
   opacity: .6;
   transition: 0.2s all linear;
 }
@@ -246,9 +242,8 @@ section {
   background-color: rgba(255, 255, 255, 0.4);
   width: 80vw;
   height: 85dvh;
-  border-radius: 25px;
+  border-radius: 50px;
   margin: auto;
-  box-shadow: rgba(10, 127, 37, 0.717) 10px 10px 50px;
   /* transform: translateX(-100%); */
   /* animation: enterAnimation 1s forwards; */
   z-index: 2; /* Valor más alto para el section */
@@ -321,7 +316,6 @@ section {
   
   section {
     background-color: rgba(40, 40, 40, 0.9);
-    box-shadow: rgba(0, 0, 0, 0.8) 10px 10px 50px;
   }
   
   h1 {
@@ -346,7 +340,7 @@ section {
   }
   
   .progress {
-    background-color: rgba(40, 40, 40, 0.5);
+    background-color: rgba(80, 80, 80, 0.5);
   }
   
   .progress_number {
