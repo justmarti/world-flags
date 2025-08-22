@@ -399,8 +399,15 @@ document.addEventListener('keydown', function (event) {
 
 // Función simple para empezar el juego
 function startGame() {
-    console.log('START GAME LLAMADO');
-    window.location.href = 'html/flags.html';
+    // Solo funciona en mobile
+    if (window.innerWidth <= 768) {
+        console.log('START GAME LLAMADO EN MOBILE');
+        if (window.location.href.includes('score.html')) {
+            window.location.href = 'flags.html';
+        } else {
+            window.location.href = 'html/flags.html';
+        }
+    }
 }
 
 if (window.location.href.includes('flags.html')) {

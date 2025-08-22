@@ -16,7 +16,7 @@
         <section id="sec">
             <h1>Your Score</h1>
             <p id="score"></p>
-            <p id="press" class="blink" style="padding-top: 10%; font-size: 33px;">Press spacebar to play again</p>
+            <p id="press" class="blink" style="padding-top: 10%; font-size: 33px;" onclick="startGame()">Press spacebar to play again</p>
         </section>
     </div>
 
@@ -35,11 +35,11 @@
         </ul>
       </div>
 
-    // Importa la libreria del confetti
+    <!-- Importa la libreria del confetti -->
     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
-    // Lo enlaca con mi archivo js
+    <!-- Lo enlaca con mi archivo js -->
     <script src="../js/script.js"></script>
-    // Otra etiqueta script para este html en concreto
+    <!-- Otra etiqueta script para este html en concreto -->
     <script>
         // Recupera el valor de contadorAciertos del localStorage
         var contadorAciertos = localStorage.getItem('contadorAciertos');
