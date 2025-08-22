@@ -397,6 +397,12 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
+// Función simple para empezar el juego
+function startGame() {
+    console.log('START GAME LLAMADO');
+    window.location.href = 'html/flags.html';
+}
+
 if (window.location.href.includes('flags.html')) {
     // PONE BANDERA Y PAIS EN UNA POSICION RANDOM DE 1 A 3 CUANDO SE CARGA LA PAGINA FLAGS.HTML
     var opcionCorrectaNum = Math.floor(Math.random() * 3) + 1;

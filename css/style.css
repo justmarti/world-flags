@@ -63,6 +63,22 @@ html {
   html, body {
     background: rgba(40, 40, 40, 0.9);
   }
+  
+  .blink {
+    visibility: hidden;
+  }
+  
+  .blink:before {
+    content: "Tap here to start";
+    visibility: visible;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    font-size: 8vw;
+  }
 }
 
 *:focus {
@@ -260,9 +276,7 @@ section {
   height: 85dvh;
   border-radius: 50px;
   margin: auto;
-  /* transform: translateX(-100%); */
-  /* animation: enterAnimation 1s forwards; */
-  z-index: 2; /* Valor más alto para el section */
+  z-index: 2;
 }
 
 
@@ -285,7 +299,7 @@ section {
   }
 
   h1 {
-    font-size: 9vw;
+    font-size: 10vw;
     top: 1vh;
   }
   
@@ -294,7 +308,7 @@ section {
     height: 100vh !important;
     height: 100dvh !important;
     border-radius: 0 !important;
-    padding: 1vh 2vw;
+    padding: 1vh 0;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -309,7 +323,7 @@ section {
     display: block;
     height: auto;
     padding: 0;
-    margin-top: 6vh;
+    margin-top: 12vh;
   }
   
   .flag {
@@ -318,21 +332,24 @@ section {
     text-align: center;
     transform: none;
     opacity: 1;
-    margin-bottom: 3vh;
+    margin: 0 auto 3vh;
   }
   
   img {
-    width: 80vw;
+    width: 90vw !important;
+    max-width: 90vw !important;
     height: auto;
     aspect-ratio: 3/2;
     object-fit: contain;
     border-radius: 10px;
-    max-width: none;
+    display: block;
+    margin: 0 auto;
   }
   
   .options {
     position: static;
-    width: 100%;
+    width: 85vw;
+    margin: 0 auto;
     transform: none;
     opacity: 1;
     display: block;
@@ -343,7 +360,7 @@ section {
     align-items: center;
     gap: 3vw;
     margin-bottom: 1.5vh;
-    padding: 1vh 2vw;
+    padding: 1vh 0;
     border-radius: 10px;
   }
   
@@ -371,10 +388,10 @@ section {
   }
   
   .button-group {
-    width: 100%;
+    width: 85vw;
+    margin: 2vh auto 0;
     flex: 0 0 auto;
-    margin-top: 2vh;
-    padding: 1vh 2vw;
+    padding: 0;
   }
   
   .buttons {
