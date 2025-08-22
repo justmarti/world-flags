@@ -54,6 +54,11 @@ p.blink, #score {
   padding: 0px;
 }
 
+html {
+  background: #4ec85a;
+  min-height: 100vh;
+}
+
 *:focus {
   outline: none;
 }
@@ -85,6 +90,7 @@ p.blink, #score {
 .button-group {
   width: 100%;
   margin-top: 2vh;
+  padding: 0 2vw;
 }
 
 
@@ -93,6 +99,10 @@ body {
   color: white;
   overflow: hidden;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -253,42 +263,164 @@ section {
 
 
 
-@media (max-width: 600px) {
+/* Mobile styles */
+@media (max-width: 768px) {
+  .area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  main.context {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    overflow-x: hidden;
+  }
+
   h1 {
-    font-size: 8vw;
+    font-size: 9vw;
+    top: 1vh;
+  }
+  
+  section {
+    width: 100% !important;
+    height: 100vh !important;
+    border-radius: 0 !important;
+    padding: 1vh 2vw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0 !important;
+    position: relative;
+    max-width: none !important;
+  }
+  
+  #zzz {
+    display: block;
+    height: auto;
+    padding: 0;
+    margin-top: 6vh;
+  }
+  
+  .flag {
+    position: static;
+    width: 100%;
+    text-align: center;
+    transform: none;
+    opacity: 1;
+    margin-bottom: 3vh;
+  }
+  
+  img {
+    width: 80vw;
+    height: auto;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    border-radius: 10px;
+    max-width: none;
   }
   
   .options {
-    width: 70%;
-    left: 15%;
-    top: 70%;
+    position: static;
+    width: 100%;
+    transform: none;
+    opacity: 1;
+    display: block;
   }
-
-  /* .pais {
-    font-size: 1.5em;
-  } */
-
-  .flag {
-    left: 10%;
-    top: 35%;
+  
+  .option-group {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+    margin-bottom: 1.5vh;
+    padding: 1vh 2vw;
+    border-radius: 10px;
   }
-
-  img {
-    max-width: 80%;
-    height: auto;
+  
+  input[type="radio"] {
+    width: 5vw;
+    height: 5vw;
+    min-width: 22px;
+    min-height: 22px;
+    border-width: 0.3vw;
+    touch-action: manipulation;
+    flex-shrink: 0;
   }
-
+  
+  input[type="radio"]:active {
+    transform: scale(0.9);
+  }
+  
+  label {
+    font-size: 4vw;
+    margin-left: 0;
+    flex-grow: 1;
+    padding: 0;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .button-group {
+    width: 100%;
+    flex: 0 0 auto;
+    margin-top: 2vh;
+    padding: 1vh 2vw;
+  }
+  
   .buttons {
-    margin-top: 6%;
+    padding: 2.5vw;
+    font-size: 4vw;
+    border-width: 0.3vw;
+    min-height: 45px;
+    touch-action: manipulation;
+    border-radius: 20px;
+    font-weight: 600;
   }
-
-  #opcion1, #opcion2 {
-    padding-bottom: 8%;
+  
+  .buttons:active {
+    transform: scale(0.95);
   }
-  #radio1, #radio2 {
-    margin-bottom: 8%;
+  
+  .progress {
+    position: fixed;
+    bottom: 1vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85vw;
+    margin: 0;
+    padding: 1.5vw;
+    border-radius: 20px;
+    z-index: 10;
   }
-
+  
+  .progress_number {
+    width: 5.5vw;
+    height: 5.5vw;
+    min-width: 25px;
+    min-height: 25px;
+    font-size: 3vw;
+    border-width: 0.2vw;
+    font-weight: 600;
+  }
+  
+  /* Disable scroll */
+  body {
+    overflow: hidden;
+  }
+  
+  /* Better touch targets */
+  .option-group:active {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 }
 
 
@@ -300,12 +432,23 @@ section {
   top: 8vh;
 }
 
+@media (max-width: 768px) {
+  .context {
+    top: 0 !important;
+  }
+}
+
 .area {
   background: #4ec85a;
   background: -webkit-linear-gradient(to left, #8ffbac, #4ec87d);
-  width: 100%;
+  width: 100vw;
   height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
+
 
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
@@ -313,6 +456,8 @@ section {
     background: #1a1a1a;
     background: -webkit-linear-gradient(to left, #2d2d2d, #1a1a1a);
   }
+}
+
   
   section {
     background-color: rgba(40, 40, 40, 0.9);
