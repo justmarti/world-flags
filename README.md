@@ -1,4 +1,4 @@
-# Guess 10 Flags
+# World Flags 🌍
 
 > **⚠️ Warning**
 > 
