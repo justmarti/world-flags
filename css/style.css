@@ -312,6 +312,53 @@ section {
   height: 100vh;
 }
 
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .area {
+    background: #1a1a1a;
+    background: -webkit-linear-gradient(to left, #2d2d2d, #1a1a1a);
+  }
+  
+  section {
+    background-color: rgba(40, 40, 40, 0.9);
+    box-shadow: rgba(0, 0, 0, 0.8) 10px 10px 50px;
+  }
+  
+  h1 {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  label {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  input[type="radio"] {
+    border: 0.4vw solid rgba(255, 255, 255, 0.7);
+  }
+  
+  .buttons {
+    color: rgba(255, 255, 255, 0.9);
+    border: .4vw solid rgba(255, 255, 255, 0.7);
+  }
+  
+  .buttons:hover {
+    background-color: #4ec85a;
+  }
+  
+  .progress {
+    background-color: rgba(40, 40, 40, 0.5);
+  }
+  
+  .progress_number {
+    border: .3vw solid rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  p.blink, #score {
+    color: #4ec87d;
+  }
+}
+
 .circles li {
   position: absolute;
   display: block;
