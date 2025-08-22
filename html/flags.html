@@ -3,28 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Principal page of Guess the Flag">
+    <meta name="description" content="Interactive flag quiz - guess the country from its flag and test your geography knowledge">
+    <meta name="keywords" content="flag quiz, geography game, countries, flags, educational game">
     <meta name="author" content="Marti Espinosa">
-    <title>Guess the Flag</title>
-    <link rel="icon" href="../icon/icon.png" type="image/png">
+    <meta name="robots" content="index, follow">
+    <title>Flag Quiz</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
 
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body onload="desSeleccionarRadioButtons()">
-    <div class="context">        
-        <section id="sec">
-            <h1>Guess the Flag</h1>
+    <main class="context">        
+        <section id="sec" role="main">
+            <header>
+                <h1>Guess the Flag</h1>
+            </header>
             <div id="zzz">
-              <img class="flag" alt="flag"></img> <!-- https://es.piliapp.com/emoji/list/flags/ && https://iconduck.com/sets/twitter-emoji-twemoji-set/flags -->
-              <div class="options">
-                  <input type="radio" id="radio1" class="radio" name="pais" tabindex="1"><label id="opcion1" class="pais" for="radio1"></label><br>
-                  <input type="radio" id="radio2" class="radio" name="pais" tabindex="2"><label id="opcion2" class="pais" for="radio2"></label><br>
-                  <input type="radio" id="radio3" class="radio" name="pais" tabindex="3"><label id="opcion3" class="pais" for="radio3"></label><br>
-                  <button id="solve" class="buttons">Solve</button>
-                  <button id="next" class="buttons" disabled>Next flag</button>
-              </div>
+              <figure class="flag-container">
+                  <img class="flag" alt="Flag to identify" role="img">
+              </figure>
+              <form class="options" role="form" aria-label="Flag identification quiz">
+                  <fieldset>
+                      <legend class="sr-only">Choose the correct country for this flag</legend>
+                      <div class="option-group">
+                          <input type="radio" id="radio1" class="radio" name="pais" tabindex="1">
+                          <label id="opcion1" class="pais" for="radio1"></label>
+                      </div>
+                      <div class="option-group">
+                          <input type="radio" id="radio2" class="radio" name="pais" tabindex="2">
+                          <label id="opcion2" class="pais" for="radio2"></label>
+                      </div>
+                      <div class="option-group">
+                          <input type="radio" id="radio3" class="radio" name="pais" tabindex="3">
+                          <label id="opcion3" class="pais" for="radio3"></label>
+                      </div>
+                      <div class="button-group">
+                          <button id="solve" class="buttons" type="button">Solve</button>
+                          <button id="next" class="buttons" type="button" disabled>Next flag</button>
+                      </div>
+                  </fieldset>
+              </form>
             </div>
-            <div class="progress">
+            <nav class="progress" role="progressbar" aria-label="Quiz progress" aria-valuenow="1" aria-valuemin="1" aria-valuemax="10">
                 <div id="guess1" class="progress_number">1</div>
                 <div id="guess2" class="progress_number">2</div>
                 <div id="guess3" class="progress_number">3</div>
@@ -35,9 +55,9 @@
                 <div id="guess8" class="progress_number">8</div>
                 <div id="guess9" class="progress_number">9</div>
                 <div id="guess10" class="progress_number">10</div>
-            </div>             
+            </nav>             
         </section>
-    </div>
+    </main>
 
     <div class="area">
       <ul class="circles">
