@@ -3,13 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Test your geography knowledge! Guess world flags and try to score 10/10.">
-    <meta name="keywords" content="flags, geography, quiz, countries, game, education">
+    <meta name="description" content="World Flags Quiz - Test your geography knowledge! Guess world flags from 10 countries and try to score 10/10. Free online flags game.">
+    <meta name="keywords" content="world flags, flags quiz, geography quiz, country flags, flags game, world geography, flag identification, countries quiz, educational game, geography test, national flags, flag guessing game, world countries, geography learning, flag trivia, countries and capitals, world map quiz, geography challenge, flags of the world, country identification">
     <meta name="author" content="Marti Espinosa">
     <meta name="robots" content="index, follow">
-    <title>World Flags</title>
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="World Flags Quiz - Geography Game">
+    <meta property="og:description" content="Test your geography knowledge with this fun world flags quiz! Identify flags from countries around the world.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://justmarti.github.io/world-flags/">
+    <meta property="og:image" content="https://justmarti.github.io/world-flags/screenshots/5.png">
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="World Flags Quiz - Geography Game">
+    <meta name="twitter:description" content="Test your geography knowledge with this fun world flags quiz!">
+    <meta name="twitter:image" content="https://justmarti.github.io/world-flags/screenshots/5.png">
+    
+    <title>World Flags Quiz - Free Online Geography Game | Flag Identification</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
-    <link rel="canonical" href="https://martiespinosa.github.io/world-flags/">
+    <link rel="canonical" href="https://justmarti.github.io/world-flags/">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "name": "World Flags Quiz",
+      "description": "Test your geography knowledge with this interactive world flags quiz game. Identify flags from countries around the world and try to score 10/10.",
+      "url": "https://justmarti.github.io/world-flags/",
+      "genre": "Educational Quiz",
+      "gamePlatform": "Web Browser",
+      "applicationCategory": "Game",
+      "operatingSystem": "Any",
+      "isAccessibleForFree": true,
+      "author": {
+        "@type": "Person",
+        "name": "Marti Espinosa"
+      },
+      "keywords": "world flags, geography quiz, educational game, country flags, flag identification"
+    }
+    </script>
 
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
@@ -18,7 +53,7 @@
     <main class="context">        
         <section id="sec" role="banner">
             <header>
-                <h1>Welcome to World Flags</h1>
+                <h1>World Flags Quiz</h1>
             </header>
             <p class="blink" role="button" tabindex="0" onclick="startGame()">Press spacebar to start</p>
         </section>
