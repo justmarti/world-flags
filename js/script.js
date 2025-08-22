@@ -407,6 +407,8 @@ function startGame() {
         } else {
             window.location.href = 'html/flags.html';
         }
+    } else {
+        console.log('CLICK IGNORADO EN PC - USA SPACEBAR');
     }
 }
 
