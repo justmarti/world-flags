@@ -1,9 +1,5 @@
 # World Flags 🌍
 
-> **⚠️ Warning**
-> 
-> This project is not optimized for mobile devices. The display and user experience may not be suitable on small screens.
-
 ## About the Game
 **World Flags** is a simple and fun web game built using **vanilla HTML**, **CSS**, and **JavaScript**. In this game, you'll be shown 10 flags from around the world, and your task is to correctly identify them. Challenge yourself and aim for a perfect score of 10 out of 10!
 
