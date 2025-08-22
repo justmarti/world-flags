@@ -439,9 +439,9 @@ const solveButton = document.getElementById('solve');
 const nextButton = document.getElementById('next');
 
 if (window.location.href.includes('flags.html')) {
-    // PONE EN GRIS EL PROGRES NUMBER DE LA BANDERA ACTUAL
-    document.getElementsByClassName('progress_number')[flag_no].style.border = '.3vw solid rgba(128, 128, 128, 0.7)';
-    document.getElementsByClassName('progress_number')[flag_no].style.color = 'rgba(128, 128, 128, 0.7)';
+    // PONE EN NARANJA EL PROGRES NUMBER DE LA BANDERA NUMERO 1
+    document.getElementsByClassName('progress_number')[flag_no].style.border = '.3vw solid rgba(255, 165, 0, 0.6)';
+    document.getElementsByClassName('progress_number')[flag_no].style.color = 'rgba(255, 165, 0, 0.6)';
 
 
     solveButton.addEventListener('click', function() {
@@ -462,25 +462,20 @@ if (window.location.href.includes('flags.html')) {
             nextButton.style.display = 'block';
                    
             // COLOREA EL PROGRESS NUMBER DE LA BARRA DE ABAJO SEGUN SI ACIERTA O FALLA
-            const currentProgressNumber = document.getElementsByClassName('progress_number')[flag_no];
-            const correctRadio = document.getElementById('radio' + opcionCorrectaNum);
-            
             if (selectedRadioButton.id !== 'radio' + opcionCorrectaNum) {
-                // Respuesta incorrecta
                 selectedRadioButton.style.backgroundColor = 'rgba(255, 0, 0, .8)';
-                correctRadio.style.backgroundColor = '#4ec85a';
-                currentProgressNumber.style.backgroundColor = 'rgba(255, 0, 0, .8)';
+                document.getElementById('radio' + opcionCorrectaNum).style.backgroundColor = '#4ec85a';
+                document.getElementsByClassName('progress_number')[flag_no].style.backgroundColor = 'rgba(255, 0, 0, .8)';
+                document.getElementsByClassName('progress_number')[flag_no].style.border = '.3vw solid white';
+                document.getElementsByClassName('progress_number')[flag_no].style.color = 'white';                
             } else {
-                // Respuesta correcta
-                correctRadio.style.backgroundColor = '#4ec85a';
-                currentProgressNumber.style.backgroundColor = '#4ec85a';
+                document.getElementById('radio' + opcionCorrectaNum).style.backgroundColor = '#4ec85a';
+                document.getElementsByClassName('progress_number')[flag_no].style.backgroundColor = '#4ec85a';
+                document.getElementsByClassName('progress_number')[flag_no].style.border = '.3vw solid white';
+                document.getElementsByClassName('progress_number')[flag_no].style.color = 'white';               
                 contadorAciertos++;
                 localStorage.setItem('contadorAciertos', contadorAciertos);
             }
-            
-            // Estilos comunes para ambos casos
-            currentProgressNumber.style.border = '.3vw solid white';
-            currentProgressNumber.style.color = 'white';
 
             [...radioButtons].forEach(function(radioButton) {
                 radioButton.disabled = true;
@@ -497,9 +492,9 @@ if (window.location.href.includes('flags.html')) {
         if (flag_no == 9) {
             window.location.href = 'score.html';
         } else {
-            // PONE EN GRIS EL PROGRES NUMBER DE LA SIGUIENTE BANDERA
-            document.getElementsByClassName('progress_number')[flag_no + 1].style.border = '.3vw solid rgba(128, 128, 128, 0.7)';
-            document.getElementsByClassName('progress_number')[flag_no + 1].style.color = 'rgba(128, 128, 128, 0.7)';
+            // PONE EN NARANJA EL PROGRES NUMBER DE LA BANDERA ACTUAL
+            document.getElementsByClassName('progress_number')[flag_no + 1].style.border = '.3vw solid rgba(255, 165, 0, 0.6)';
+            document.getElementsByClassName('progress_number')[flag_no + 1].style.color = 'rgba(255, 165, 0, 0.6)';
 
             flag_no++;
 
