@@ -1,16 +1,8 @@
-// Verificar si el dispositivo es un PC
-//if (window.innerWidth < 500 || window.innerHeight < 500) {
-    // Redirigir a otra página
-    //window.location.href = 'html/error.html';
-//}
-
-
 // IMPIDE QUE SE PUEDA IR HACIA ATRAS O ADELANTE USANDO LAS FLECHAS DEL NAVEGADOR
 window.history.pushState(null, null, window.location.href);
 window.onpopstate = function() {
     window.history.go(1);
 };
-
 
 // Función para des-seleccionar los radio buttons al cargar o recargar la página
 function desSeleccionarRadioButtons() {
@@ -20,11 +12,9 @@ function desSeleccionarRadioButtons() {
     }
 }
 
-
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('sec').style.opacity = 1; // Cuando se carga completamente, establece la opacidad a 1
 });
-
 
 function getRandomElements(dictionary, count) {
     let keys = Object.keys(dictionary);
@@ -38,7 +28,6 @@ function getRandomElements(dictionary, count) {
     }
     return randomElements;
 }
-
 
 function getRandomCountry() {
     let randomCountry;
@@ -54,9 +43,6 @@ function getRandomCountry() {
     
     return randomCountry;
 }
-
-
-
 
 // APLICA LA REDUCCION DE TAMAÑO DE LOS PAISES QUE SU NOMBRE ES LARGO DE MANERA PROPORCIONAL
 document.addEventListener('DOMContentLoaded', function () {
@@ -86,9 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(pais, observerConfig);
     });
 });
-
-
-
 
 function comprobarAnchoApp() {
     return document.documentElement.clientWidth;
@@ -136,10 +119,6 @@ window.addEventListener('load', ajustarTamanioTexto);
 // Llamar a ajustarTamanioTexto cada vez que la ventana se redimensiona
 window.addEventListener('resize', ajustarTamanioTexto);
 
-
-
-
-
 // AGREGA FUNCIONALIDAD A LA TECLA ENTER
 document.addEventListener('DOMContentLoaded', function () {
     // Obtén todos los elementos de tipo radio
@@ -162,10 +141,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-
-
-
 function score(contadorAciertos) {
     let scoreOutOfTen = contadorAciertos + ' / 10';
     document.getElementById('score').innerHTML = scoreOutOfTen;
@@ -175,8 +150,6 @@ function score(contadorAciertos) {
         confetti.addConfetti();
     }
 }
-
-
 
 // LAS 193 BANDERAS ASOCIADAS AL NOMBRE DE SU PAIS
 let fullFlagDictionary = {
@@ -376,10 +349,6 @@ let fullFlagDictionary = {
     '../img/zimbabwe.svg': 'Zimbabwe',  
 };
 
-
-
-
-
 let dictionary10 = getRandomElements(fullFlagDictionary, 10);
 let flag10 = Object.keys(dictionary10);
 let countries10 = Object.values(dictionary10);
@@ -442,11 +411,8 @@ if (window.location.href.includes('flags.html')) {
     var radioButtonCorrecto = document.getElementById('radio' + opcionCorrectaNum);
 }
 
-
 let flag_no = 0;
-
 var contadorAciertos = 0;
-
 let currentIndex = 0;
 
 const radioButtons = document.querySelectorAll("input[name='pais']");
@@ -457,7 +423,6 @@ if (window.location.href.includes('flags.html')) {
     // PONE EN NARANJA EL PROGRES NUMBER DE LA BANDERA NUMERO 1
     document.getElementsByClassName('progress_number')[flag_no].style.border = '.3vw solid rgba(255, 165, 0, 0.6)';
     document.getElementsByClassName('progress_number')[flag_no].style.color = 'rgba(255, 165, 0, 0.6)';
-
 
     solveButton.addEventListener('click', function() {
         let isChecked = false;
@@ -501,7 +466,6 @@ if (window.location.href.includes('flags.html')) {
             }
         }
     });
-
 
     nextButton.addEventListener('click', function() {
         if (flag_no == 9) {
@@ -575,17 +539,12 @@ if (window.location.href.includes('flags.html')) {
     });
 }
 
-
-
 // CONTROLADOR DEL TAB
 // Obtén todos los elementos con el atributo tabindex
 const elementosEnfocables = document.querySelectorAll('[tabindex]');
 
 // Convierte la lista de nodos en un array para facilitar el manejo
 const elementosArray = Array.from(elementosEnfocables);
-
-
-
 
 // Agrega un controlador de eventos para el evento focus a cada radio button
 radioButtons.forEach(function(radioButton) {
@@ -626,6 +585,3 @@ document.addEventListener('keydown', function(event) {
         event.preventDefault();
     }
 });
-
-
-
